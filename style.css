@@ -54,6 +54,10 @@ table {
 	border-spacing: 0;
 }
 
+
+
+
+
 .middleHeader{
 
     display: flex;
@@ -76,31 +80,38 @@ table {
     background-color: rgb(255, 255, 255);
     padding: 35px 40px;
     margin: 0 -40px;
-    
+    width: 1050px;
 }
 
 lab{
     display: flex;
     flex-direction: column;
     gap:5px;
+    justify-content: center;
     
 }
 form{
     display: flex;
     gap:15px;
     flex-wrap: wrap;
-    padding: 25px 0;
+    padding: 10px;
     
     
 }
 
 input{
-    border: 2px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid black;
+    border-radius: 10px;
     padding: 4px;
     font-size: 20px;
     outline: none;
     box-sizing: border-box;
+    
+    
+}
+
+input[type=text]{
+    width:15rem;
 }
 
 input:focus{
@@ -114,8 +125,6 @@ input:invalid{
     border-color: red;
     
 }
-
-
 .buttonsec {
     display: flex;
     justify-content: flex-start;
@@ -127,7 +136,45 @@ input:invalid{
 }
 .row{
     display: flex;
-    color: blue;
+    justify-content:space-between;
+    align-items: center;
     gap:10px;
+    border-radius: 25px;
+    background-color: aliceblue;
+    border: 1px solid black ;
+    padding: 15px;
+    gap:15px;
+    min-width: 1000px;
+    font-family: 'Prompt', sans-serif;
+}
+
+button{
+  padding: 15px;
+  font-size: 16px;
+  width: 6rem;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  background-color: rgb(207, 195, 195);
+  border-radius: 8px;
+}
+.delbutton{
+    background-color: rgb(219, 106, 106);
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+}
+
+div{
+    display: flex;
+    gap:15px;
+}
+
+button[type=submit]{
+    background-color: bisque;
 }
 

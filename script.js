@@ -1,10 +1,4 @@
-
-
-const Hobbit= new book('Hobbit', 'J.R.R. Tolkien', '300', 'finished');
-const Hobbit2= new book('hobbit2', 'JRRTolkien', '300', 'finished');
-const Hobbit3= new book('hobbit3', 'JRRTolkien', '300', 'finished');
-let myLibrary=[Hobbit,Hobbit2];
-
+let myLibrary=[];
 const title=document.getElementById('title');
 const author=document.getElementById('author')
 const pages=document.getElementById('pages')
@@ -19,14 +13,12 @@ button.addEventListener('click',event =>{
 
 
 
-
-
 function book(title, author, pages, done){
     this.title=title;
     this.author=author;
     this.pages=pages;   
     this.done=done;
-    return `${title}+by+${author}+, +${pages}+ pages, +${done}`
+    
 }
 
 function addBookToLibrary(newbook){
@@ -43,35 +35,43 @@ function displayTable(){
 
         const row=document.createElement('div');
         row.classList.add('row');
+        const butsec=document.createElement('div');
+
 
         const content=document.createElement('div');
         const remButton=document.createElement('button');
         const readButton=document.createElement('button');
 
         remButton.setAttribute('id',index);
+        remButton.textContent='DELETE';
+        remButton.classList.add('delbutton');
         remButton.addEventListener('click',removeBook=>{
             myLibrary.splice(index,1);
             displayTable();
         });
+        if(myLibrary[index].done===true) readButton.textContent='READ';
+        if(myLibrary[index].done===false) readButton.textContent='UNREAD';
 
         readButton.addEventListener('click',event=>{
 
-            if(myLibrary[index].done===true)
-            {
-            myLibrary[index].done=false}
-            else{
-                myLibrary[index].done=true
+            if(myLibrary[index].done===true){
+            myLibrary[index].done=false;
+            
             }
-
+            else{
+                myLibrary[index].done=true;
+                
+            }
             displayTable();
         });
 
-        content.textContent = `${elem.title} ${elem.author} ${elem.pages} ${elem.done}` ;
+        content.textContent = `${elem.title}, by ${elem.author}, ${elem.pages} pages read so far` ;
         
         container.appendChild(row);
         row.appendChild(content);
-        row.appendChild(remButton);
-        row.appendChild(readButton);
+        row.appendChild(butsec)
+        butsec.appendChild(remButton);
+        butsec.appendChild(readButton);
         
     })
 }
@@ -82,26 +82,5 @@ function displayTable(){
 
 
 
-displayTable();
-
-addBookToLibrary(new book('witcher','sapkowski','273','undone'));
-
-displayTable();
 
 
-
-
-
-
-/*
-const container=document.querySelector('#container');
-const content=document.createElement('div');
-content.textContent = `${myLibrary[0].title} ${myLibrary[0].author} ${myLibrary[0].pages} ${myLibrary[0].done}` ;
-container.appendChild(content);
-*/
-
-//addBookToLibrary(Hobbit3);
-    
-//console.table(myLibrary);
-
-//console.table(Hobbit3);
