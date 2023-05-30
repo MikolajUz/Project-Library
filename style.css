@@ -28,8 +28,15 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
+
 body {
 	line-height: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+   
 }
 ol, ul {
 	list-style: none;
@@ -47,4 +54,80 @@ table {
 	border-spacing: 0;
 }
 
+.middleHeader{
+
+    display: flex;
+    flex-direction: column;
+	justify-content: center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 2rem;
+	font-weight: bold;
+    padding: 30px;
+}
+
+
+.form{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    gap: 20px;
+    background-color: rgb(255, 255, 255);
+    padding: 35px 40px;
+    margin: 0 -40px;
+    
+}
+
+lab{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    
+}
+form{
+    display: flex;
+    gap:15px;
+    flex-wrap: wrap;
+    padding: 25px 0;
+    
+    
+}
+
+input{
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 4px;
+    font-size: 20px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+input:focus{
+    box-shadow: rgba(0, 0, 0.3, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+input:valid{
+    border-color: green;
+}
+input:invalid{
+    border-color: red;
+    
+}
+
+
+.buttonsec {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 30px 0;
+    flex-direction: column;
+    gap: 25px;
+    font-size: 1rem;
+}
+.row{
+    display: flex;
+    color: blue;
+    gap:10px;
+}
 
